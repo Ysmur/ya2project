@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for item in forums%}
+  <table width="100%" border="1" cellspacing="0" cellpadding="4">
+    <tr>
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/index/{{ item[0] }}">{{item[1]}}</a>
+        {% if item[0]==selection %}
+        <table width="100%" border="1" cellspacing="0" cellpadding="4">
+          {% for send in messages%}
+    <tr>
+             <td> <span class="badge badge-success">{{send[0]}}</span> </td>
+             <td> <p>{{send[1]}}</p> </td>
+
+    </tr>
+          {% endfor %}
+        </table>
+          {% endif %}
+
+      </nav>
+    </tr>
+  </table>
+
+
+{% endfor %}
+{% endblock %}
