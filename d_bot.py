@@ -1,10 +1,9 @@
+import os
 import random
-
-import discord
 from discord.ext import commands
 
 from settings import DC_TOKEN
-TOKEN = DC_TOKEN
+TOKEN = os.environ['DC_TOKEN']
 
 dashes = ['\u2680', '\u2681', '\u2682', '\u2683', '\u2684', '\u2685']
 
